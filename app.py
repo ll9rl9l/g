@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from cryptography.fernet import Fernet
 import random
 import datetime
+import os  # ✅ مهم للPORT
 
 # =======================
 # Flask App Configuration
@@ -130,7 +131,8 @@ with app.app_context():
     db.create_all()
 
 # =======================
-# Run App
+# Run App (Railway Compatible)
 # =======================
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # 🔹 البورت الديناميكي
+    app.run(host="0.0.0.0", port=port, debug=True)  # 🔹 host 0.0.0.0 ليشتغل من الخارج
