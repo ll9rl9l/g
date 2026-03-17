@@ -1,0 +1,135 @@
+/* Reset */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+/* Body */
+
+body{
+background:#f7f9fc;
+color:#333;
+}
+
+/* Header */
+
+header{
+background:#ffffff;
+padding:20px;
+border-bottom:1px solid #ddd;
+text-align:center;
+}
+
+header h1{
+color:#2c3e50;
+margin-bottom:10px;
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:#2c3e50;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#3498db;
+}
+
+/* Main */
+
+main{
+width:90%;
+max-width:1200px;
+margin:auto;
+margin-top:30px;
+}
+
+/* Home box */
+
+.home-actions{
+background:white;
+padding:50px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.home-actions h2{
+margin-bottom:20px;
+}
+
+.home-actions p{
+margin-bottom:30px;
+}
+
+/* Buttons */
+
+.btn{
+background:#3498db;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:6px;
+margin:10px;
+display:inline-block;
+}
+
+.btn:hover{
+background:#2980b9;
+}
+
+/* Stats */
+
+.stats{
+display:flex;
+gap:20px;
+margin-bottom:30px;
+}
+
+.card{
+background:white;
+flex:1;
+padding:20px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.card p{
+font-size:28px;
+color:#3498db;
+}
+
+/* Table */
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+th{
+background:#3498db;
+color:white;
+padding:12px;
+}
+
+td{
+padding:12px;
+border-bottom:1px solid #eee;
+}
+
+tr:hover{
+background:#f1f7ff;
+}

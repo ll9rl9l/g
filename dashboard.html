@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CloudIDS Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header>
+
+<h1>Security Dashboard</h1>
+
+<nav>
+<a href="/">Home</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/about">About</a>
+</nav>
+
+</header>
+
+<main>
+
+<div class="stats">
+
+<div class="card">
+<h3>Port Scan</h3>
+<p>{{port_scan}}</p>
+</div>
+
+<div class="card">
+<h3>Brute Force</h3>
+<p>{{brute_force}}</p>
+</div>
+
+<div class="card">
+<h3>Malware</h3>
+<p>{{malware}}</p>
+</div>
+
+</div>
+
+<canvas id="attackChart"></canvas>
+
+<script>
+
+const ctx = document.getElementById('attackChart');
+
+new Chart(ctx, {
+type:'bar',
+data:{
+labels:['Port Scan','Brute Force','Malware'],
+datasets:[{
+label:'Detected Attacks',
+data:[{{port_scan}},{{brute_force}},{{malware}}],
+borderWidth:1
+}]
+}
+});
+
+</script>
+
+<br><br>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>IP Address</th>
+<th>Event</th>
+<th>Description</th>
+<th>Time</th>
+</tr>
+
+{% for log in logs %}
+
+<tr>
+<td>{{log.id}}</td>
+<td>{{log.ip}}</td>
+<td>{{log.event}}</td>
+<td>{{log.description}}</td>
+<td>{{log.time}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</main>
+
+</body>
+</html>
